@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Premium Tools</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+<h2 class="logo-text">Focus<span>Flo</span></h2>
+
+<nav>
+
+<a href="index.html">Home</a>
+<a href="products.html">Premium Tools</a>
+<a href="services.html">Features</a>
+<a href="contact.html">Contact</a>
+<a href="about.html">About</a>
+
+</nav>
+
+<div class="cart" onclick="toggleCart()">
+🛒 Cart <span id="cartCount" class="cart-count">0</span>
+</div>
+
+</header>
+
+<section class="page">
+
+<h1>Our Premium Tools </h1>
+
+<div class="card-container">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+
+<h3>Focus Timer Pro</h3>
+
+<p>Advanced Pomodoro timer with smart break reminders and focus tracking.</p>
+
+<button onclick="addToCart('Focus Timer Pro')">Unlock Feature</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1551434678-e076c223a692">
+
+<h3>Smart Study Planner</h3>
+
+<p>AI-assisted planner that helps organize your study schedule efficiently.</p>
+
+<button onclick="addToCart('Smart Study Planner')">Unlock Feature</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://plus.unsplash.com/premium_photo-1681487867978-1b83ce2625c5?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+
+<h3>Habit Tracker Pro</h3>
+
+<p>Track daily habits and monitor your overall productivity growth effectively..</p>
+
+<button onclick="addToCart('Habit Tracker Pro')">Unlock Feature</button>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="cart-panel" id="cartPanel">
+
+<div class="cart-header">
+
+<h3>Your Plan</h3>
+
+<button class="close-cart" onclick="toggleCart()">✖</button>
+
+</div>
+
+<ul id="cartItems"></ul>
+
+<div class="cart-footer">
+
+<button onclick="clearCart()" class="clear-cart">Clear Cart</button>
+
+</div>
+
+</div>
+
+<footer>
+
+<div class="footer-container">
+
+<div class="footer-col">
+
+<h3 class="logo">FocusFlo</h3>
+
+<p>
+Your Ultimate Student Productivity Platform.
+</p>
+
+<div class="social-icons">
+
+<a href="#"><i class="fab fa-linkedin"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-github"></i></a>
+
+</div>
+
+</div>
+
+<div class="footer-col">
+
+<h4>Quick Links</h4>
+
+<a href="index.html">Home</a>
+<a href="products.html">Premium Tools</a>
+<a href="services.html">Features</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+<div class="footer-col">
+
+<h4>Resources</h4>
+
+<a href="services.html">Productivity Coaching</a>
+<a href="services.html">Study Techniques</a>
+<a href="services.html">Focus Workshops</a>
+<a href="services.html">Student Community</a>
+
+</div>
+
+<div class="footer-col">
+
+<h4>Contact</h4>
+
+<p>Email: hello@focusflo.com</p>
+<p>Location: Mumbai, India</p>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>© 2026 FocusFlo | Focus • Plan • Achieve</p>
+
+</div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+
