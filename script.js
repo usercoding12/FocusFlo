@@ -131,6 +131,7 @@ alert("Thank you " + name + "! Your message has been submitted successfully.");
 let msg = document.getElementById("successMessage");
 msg.style.display = "block";
 msg.classList.add("fade-in");
+this.reset();
 });
 
 /* Page Load */
@@ -141,4 +142,153 @@ welcomeMessage();
 updateCart();
 
 }
+/* Pomodoro Timer */
 
+let workTime = 1500;
+let breakTime = 300;
+
+let time = workTime;
+let timerInterval = null;
+let isWorkSession = true;
+
+function updateDisplay(){
+
+let minutes = Math.floor(time / 60);
+let seconds = time % 60;
+
+let timerElement = document.getElementById("timer");
+
+if(timerElement){
+timerElement.innerText =
+minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+}
+
+}
+
+function startTimer(){
+
+if(timerInterval) return;
+
+timerInterval = setInterval(function(){
+
+time--;
+
+updateDisplay();
+
+if(time <= 0){
+
+clearInterval(timerInterval);
+timerInterval = null;
+
+if(isWorkSession){
+
+alert("Focus session completed! Take a break.");
+
+isWorkSession = false;
+time = breakTime;
+
+let session = document.getElementById("sessionType");
+if(session) session.innerText = "Break Session";
+
+}else{
+
+alert("Break finished! Back to work.");
+
+isWorkSession = true;
+time = workTime;
+
+let session = document.getElementById("sessionType");
+if(session) session.innerText = "Work Session";
+
+}
+
+updateDisplay();
+
+}
+
+},1000);
+
+}
+
+function pauseTimer(){
+
+clearInterval(timerInterval);
+timerInterval = null;
+
+}
+
+function resetTimer(){
+
+clearInterval(timerInterval);
+timerInterval = null;
+
+isWorkSession = true;
+time = workTime;
+
+let session = document.getElementById("sessionType");
+if(session) session.innerText = "Work Session";
+
+updateDisplay();
+
+}
+
+updateDisplay();
+
+
+/* Study Planner Tool */
+
+function addTask(){
+
+let input = document.getElementById("taskInput");
+
+if(!input) return;
+
+let task = input.value.trim();
+
+if(task === "") return;
+
+let li = document.createElement("li");
+
+li.textContent = task;
+
+document.getElementById("taskList").appendChild(li);
+
+input.value = "";
+
+}
+function updateHabitProgress(){
+
+let checkboxes = document.querySelectorAll(".habit-list input");
+
+let completed = 0;
+
+checkboxes.forEach(cb => {
+
+if(cb.checked){
+completed++;
+cb.parentElement.style.textDecoration = "line-through";
+cb.parentElement.style.opacity = "0.6";
+}else{
+cb.parentElement.style.textDecoration = "none";
+cb.parentElement.style.opacity = "1";
+}
+
+});
+
+let total = checkboxes.length;
+
+let percent = (completed / total) * 100;
+
+let bar = document.getElementById("progressBar");
+
+if(bar){
+bar.style.width = percent + "%";
+}
+
+let status = document.getElementById("habitStatus");
+
+if(status){
+status.innerText = completed + " / " + total + " habits completed";
+}
+
+}

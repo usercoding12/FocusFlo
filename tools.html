@@ -3,17 +3,19 @@
 
 <head>
 
-<title>Premium Tools</title>
+<title>FocusFlo Tools</title>
 
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 
+<form id="contactForm" style="display:none;"></form>
 <body>
 
 <header>
-<h2 class="logo-text">Focus<span>Flo</span></h2>
 
+<h2 class="logo-text">Focus<span>Flo</span></h2>
 <nav>
 
 <a href="index.html">Home</a>
@@ -31,51 +33,95 @@
 
 </header>
 
+<section class="tools-hero">
+
+<h1>FocusFlo Productivity Tools</h1>
+
+<p>Boost your focus and manage your study sessions using FocusFlo’s smart tools.</p>
+
+</section>
 <section class="page">
 
-<h1>Our Premium Tools </h1>
 
 <div class="card-container">
 
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
-
-<h3>Focus Timer Pro</h3>
-
-<p>Advanced Pomodoro timer with smart break reminders and focus tracking.</p>
-
-<button onclick="addToCart('Focus Timer Pro')">Unlock Feature</button>
-
-</div>
 
 <div class="card">
 
-<img src="https://images.unsplash.com/photo-1551434678-e076c223a692">
+<h3>Pomodoro Focus Timer</h3>
 
-<h3>Smart Study Planner</h3>
+<h1 id="timer">25:00</h1>
 
-<p>AI-assisted planner that helps organize your study schedule.</p>
+<p id="sessionType">Study/Work Session</p>
 
-<button onclick="addToCart('Smart Study Planner')">Unlock Feature</button>
+<button onclick="startTimer()">Start</button>
+<button onclick="pauseTimer()">Pause</button>
+<button onclick="resetTimer()">Reset</button>
 
 </div>
+
 
 <div class="card">
 
-<img src="https://plus.unsplash.com/premium_photo-1681487867978-1b83ce2625c5?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+<h3>Quick Study Planner</h3>
 
-<h3>Habit Tracker Pro</h3>
+<input type="text" id="taskInput" placeholder="Enter study task">
 
-<p>Track daily habits and monitor your overall productivity growth effectively.</p>
+<button onclick="addTask()">Add Task</button>
 
-<button onclick="addToCart('Habit Tracker Pro')">Unlock Feature</button>
+<ul id="taskList"></ul>
+
+</div>
+<div class="card">
+
+<div class="card">
+
+<h3>Habit Tracker</h3>
+
+<div class="habit-list">
+
+<label>
+<input type="checkbox" onchange="updateHabitProgress()">
+Study 2 Hours
+</label>
+
+<label>
+<input type="checkbox" onchange="updateHabitProgress()">
+Review Class Notes
+</label>
+
+<label>
+<input type="checkbox" onchange="updateHabitProgress()">
+Practice Problems
+</label>
+
+<label>
+<input type="checkbox" onchange="updateHabitProgress()">
+Revise Yesterday’s Topics
+</label>
+
+<label>
+<input type="checkbox" onchange="updateHabitProgress()">
+Plan Tomorrow's Study
+</label>
 
 </div>
 
+<div class="habit-progress">
+
+<div id="progressBar"></div>
+
+</div>
+
+<p id="habitStatus">0 / 5 habits completed</p>
+
+</div>
+
+</div>
 </div>
 
 </section>
+
 
 <div class="cart-panel" id="cartPanel">
 
@@ -96,6 +142,7 @@
 </div>
 
 </div>
+
 
 <footer>
 
@@ -130,6 +177,7 @@ Your Ultimate Student Productivity Platform.
 <a href="tools.html">Tools</a>
 <a href="contact.html">Contact</a>
 <a href="about.html">About</a>
+
 </div>
 
 <div class="footer-col">
@@ -163,9 +211,9 @@ Your Ultimate Student Productivity Platform.
 
 </footer>
 
+
 <script src="script.js"></script>
 
 </body>
 
 </html>
-
